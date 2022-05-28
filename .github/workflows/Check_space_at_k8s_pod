@@ -1,0 +1,14 @@
+name: Check_space_at_k8s_pod
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  prepare:
+    runs-on: self-hosted
+    name: selfhosted
+    steps:
+      - name: Check free space
+        run: df -h
